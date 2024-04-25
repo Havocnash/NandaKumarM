@@ -1,0 +1,217 @@
+Coding for innovators:
+Question No1:
+
+1.
+def has_only_green_eyes(person):
+return person['eye_color'] == 'green'
+def has_red_hair_with_consecutive_letters(person):
+hair_color = person['hair_color']
+for i in range(len(hair_color) - 1):
+if hair_color[i] == hair_color[i + 1]:
+return True
+return False
+def has_glasses_and_two_vowels_in_name(person):
+name = person['name']
+vowel_count = 0
+for char in name:
+if char.lower() in 'aeiou':
+vowel_count += 1
+return 'glasses' in person['features'] and vowel_count == 2
+def has_no_glasses_and_three_vowels_in_name(person):
+name = person['name']
+vowel_count = 0
+for char in name:
+if char.lower() in 'aeiou':
+vowel_count += 1
+return 'glasses' not in person['features'] and vowel_count == 3
+
+2.
+import random
+def find_serial_number():
+return random.randint(1000, 9999)
+def find_id_number(serial_number):
+return serial_number + random.randint(1, 100)
+def find_parent_bot(id_number):
+return id_number - random.randint(1, 100)
+def tell_ethic():
+print("Ethic, the ID number has zero.")
+print("-Start")
+serial_number = find_serial_number()
+print("Serial number:", serial_number)
+id_number = find_id_number(serial_number)
+print("ID number:", id_number)
+for _ in range(100):
+if id_number == 0:
+tell_ethic()
+break
+parent_bot = find_parent_bot(id_number)
+print("Parent bot:", parent_bot)
+id_number = parent_bot
+print("-Stop")
+
+3.
+import random
+def generate_random_key():
+return random.randint(1, 10)
+def spin_key():
+return random.choice(['red', 'green'])
+def unlock_door():
+print("Door unlocked!")
+def tell_ethic():
+print("Ethic, the door is unlocked.")
+print("Go to the lock")
+print("Start")
+while spin_key() != 'green':
+pass
+unlock_door()
+tell_ethic()
+print("Stop")
+
+#Question no 2:
+1.
+max_rows = 3
+for i in range(1, max_rows + 1):
+print('*' * i)
+for i in range(max_rows - 1, 0, -1):
+print('*' * i)
+Code for this output:
+*
+**
+***
+**
+*
+
+2.
+def make_palindrome(input_str, index):
+if index < 0 or index >= len(input_str):
+return "Invalid index"
+before_index = input_str[:index + 1]
+after_index = input_str[index:]
+reversed_after_index = after_index[::-1]
+palindrome = before_index + reversed_after_index
+return palindrome
+input_str = input("Enter a string: ")
+index = int(input("Enter an index value: "))
+result = make_palindrome(input_str, index)
+print("Palindrome after index:", result)
+Output
+Enter a string: abcdef
+Enter an index value: 2
+Palindrome after index: abcfedc
+
+3.Palindrome
+def make_palindrome(input_str):
+reversed_str = input_str[::-1]
+palindrome = input_str
+for i in range(len(input_str)):
+if palindrome == palindrome[::-1]:
+return palindrome
+palindrome += reversed_str[i]
+return palindrome
+input_str = input("Enter a string: ")
+palindrome = make_palindrome(input_str)
+print("Palindrome:", palindrome)
+Output
+Input:abcd
+Output:dcba
+
+4.Celsius to fahrenheit
+def celsius_to_fahrenheit(celsius):
+return (celsius * 1.8) + 32
+def fahrenheit_to_celsius(fahrenheit):
+return (fahrenheit - 32) / 1.8
+def fibonacci(n):
+if n == 0:
+return 0
+elif n == 1:
+return 1
+else:
+return fibonacci(n - 1) + fibonacci(n - 2)
+celsius_input = float(input("Enter Celsius value: "))
+print("Fahrenheit is:", celsius_to_fahrenheit(celsius_input))
+fahrenheit_input = float(input("Enter Fahrenheit value: "))
+print("Celsius is:", fahrenheit_to_celsius(fahrenheit_input))
+fibonacci_input = int(input("Enter a number for Fibonacci
+sequence: "))
+print("Fibonacci:", fibonacci(fibonacci_input))
+
+5. Print given input
+input and print
+print("hi")
+print("your details")
+a=input("enter your name")
+b=input("enter your age")
+c=input("enter your place")
+print("your name is "+a)
+print("your age is "+b)
+print("your college is "+c)
+output: hi
+Your details
+your name is Nanda
+your age is 23
+your college is Hosur
+
+6.Asking details
+print("Favourite")
+a=input("Favourite city")
+b=input("Favourite food")
+c=input("Favourite movie")
+print("your Favourite city is "+a)
+print("your Favourite food is "+b)
+print("your Favourite movie is "+c)
+output:Favourite
+your Favourite city is monaco
+your Favourite food is curd
+your Favourite movie is Batman
+
+7.Eligible for voting
+gender = input("Enter gender: ")
+age = int(input("Enter age: "))
+if age > 18:
+if gender == "male":
+print("Adult male allowed to vote at booth number 1")
+elif gender == "female":
+print("Adult female allowed to vote at booth number 2")
+else:
+print("Adult of other gender allowed to vote at booth number 3")
+else:
+print("You are a child and not allowed to vote.")
+
+8.Fibonacci series
+def fibonacci(n):
+if n == 0:
+return 0
+elif n == 1:
+return 1
+else:
+return fibonacci(n - 1) + fibonacci(n - 2)
+def main():
+limit = int(input("Enter the limit: "))
+print("Fibonacci series:")
+for i in range(limit):
+print(fibonacci(i), end=" ")
+if __name__ == "__main__":
+main()
+
+9.Print given input
+first_name ="nanda"
+last_name= "kumar"
+age ="21"
+print(team_name )
+print(visionary )
+print(members )
+output:
+nanda
+kumar
+21
+
+10.Turtle code for concentric circles
+import turtle
+t = turtle.Turtle()
+t.speed(0)
+for i in range(10):
+t.circle(10*i)
+t.up()
+t.sety((10*i)*(-1))
+t.down()
+turtle.done()
